@@ -43,7 +43,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@+id/first_item_image"
@@ -62,8 +61,8 @@
 
         <Constraint
             android:id="@id/first_item_image_hidden"
-            android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_width="@dimen/image_width_start"
+            android:layout_height="@dimen/image_height_start"
             android:layout_marginEnd="@dimen/grid_large"
             android:src="@drawable/ic_emilia"
             motion:layout_constraintEnd_toEndOf="@id/first_item_image_negative_margin"

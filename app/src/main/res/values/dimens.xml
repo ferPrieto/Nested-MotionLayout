@@ -7,11 +7,12 @@
     <dimen name="card_height_start">250dp</dimen>
     <dimen name="card_width_start">350dp</dimen>
 
-    <dimen name="card_height_end">150dp</dimen>
-    <dimen name="card_width_end">350dp</dimen>
+    <dimen name="card_height_end">120dp</dimen>
+    <dimen name="card_width_end">310dp</dimen>
 
-    <dimen name="image_height">120dp</dimen>
-    <dimen name="image_width">320dp</dimen>
+    <dimen name="image_height_start">120dp</dimen>
+    <dimen name="image_width_start">320dp</dimen>
 
-
+    <dimen name="image_height_end">150dp</dimen>
+    <dimen name="image_width_end">370dp</dimen>
 </resources>

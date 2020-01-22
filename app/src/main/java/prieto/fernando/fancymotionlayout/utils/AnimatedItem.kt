@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.motion.widget.MotionLayout
@@ -13,12 +14,18 @@ import prieto.fernando.fancymotionlayout.R
 
 class AnimatedItem @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : MotionLayout(context, attrs, defStyleAttr) {
+) : MotionLayout(context, attrs, defStyleAttr), View.OnClickListener {
     private var initialized = false
+
+    private lateinit var animatedItemClick: AnimatedItemClick
 
     init {
         initializeView(context)
         attrs?.let(::applyAttributes)
+    }
+
+    fun setAnimatedItemClick(animatedItemClick: AnimatedItemClick) {
+        this.animatedItemClick = animatedItemClick
     }
 
     override fun setOnClickListener(l: OnClickListener?) {
@@ -34,6 +41,8 @@ class AnimatedItem @JvmOverloads constructor(
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         initialized = true
+        item_image.setOnClickListener { animatedItemClick.onClickListener() }
+        item_text.setOnClickListener { animatedItemClick.onClickListener() }
     }
 
     private fun initializeView(context: Context) {
@@ -43,8 +52,8 @@ class AnimatedItem @JvmOverloads constructor(
     @SuppressLint("CustomViewStyleable")
     private fun applyAttributes(attributes: AttributeSet) {
         val typedArray = context.obtainStyledAttributes(attributes, R.styleable.ConvertibleCardView)
-        typedArray.setTextIfSet(text, R.styleable.ConvertibleCardView_title)
-        typedArray.setImageIfSet(image, R.styleable.ConvertibleCardView_image)
+        typedArray.setTextIfSet(item_text, R.styleable.ConvertibleCardView_title)
+        typedArray.setImageIfSet(item_image, R.styleable.ConvertibleCardView_image)
         typedArray.recycle()
     }
 
@@ -53,4 +62,12 @@ class AnimatedItem @JvmOverloads constructor(
 
     private fun TypedArray.setImageIfSet(imageView: AppCompatImageView, imageViewTextRes: Int) =
         getDrawable(imageViewTextRes)?.let(imageView::setImageDrawable)
+
+    override fun onClick(v: View?) {
+        animatedItemClick.onClickListener()
+    }
+}
+
+interface AnimatedItemClick {
+    fun onClickListener()
 }

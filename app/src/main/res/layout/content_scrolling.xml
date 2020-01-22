@@ -11,13 +11,14 @@
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/motion_wrapper"
         android:paddingBottom="@dimen/grid_large"
         app:layoutDescription="@xml/scene_body">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/first_item_image_hidden"
-            android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_width="@dimen/image_width_start"
+            android:layout_height="@dimen/image_height_start"
             android:layout_marginEnd="@dimen/grid_large"
             android:src="@drawable/ic_emilia"
             app:layout_constraintEnd_toEndOf="@id/first_item"
@@ -40,7 +41,7 @@
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/first_item_background"
-            android:layout_width="@dimen/card_height_end"
+            android:layout_width="@dimen/card_width_start"
             android:layout_height="@dimen/card_height_start"
             android:layout_marginStart="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
@@ -53,11 +54,10 @@
 
         <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/first_item"
-            android:layout_width="350dp"
-            android:layout_height="250dp"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
             android:elevation="@dimen/card_elevation"
             app:image="@drawable/ic_emilia"
-            android:onClick="animatedItemClicked"
             app:layout_constraintBottom_toBottomOf="@id/first_item_background"
             app:layout_constraintEnd_toEndOf="@id/first_item_background"
             app:layout_constraintStart_toStartOf="@id/first_item_background"

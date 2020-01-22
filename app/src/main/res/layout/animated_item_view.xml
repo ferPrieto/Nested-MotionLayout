@@ -3,25 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/root"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layoutDescription="@xml/scene_card">
+    android:layout_width="@dimen/card_width_start"
+    android:layout_height="@dimen/card_height_start"
+    app:layoutDescription="@xml/scene_card"
+    tool:showIn="@layout/content_scrolling">
+
+    <Space
+        android:id="@+id/item_negative_margin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tool:text="@string/content_scrolling_emilia_title" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image"
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/image_width_start"
+        android:layout_height="@dimen/image_height_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_text"
         app:layout_constraintTop_toTopOf="parent"
         tool:src="@drawable/ic_emilia" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
