@@ -13,7 +13,7 @@ object Versions {
     const val gradle = "3.5.1"
     const val constraintLayout = "2.0.0-beta3"
     const val lifeCycle = "2.0.0"
-    const val material = "1.1.0-alpha05"
+    const val material = "1.1.0-beta01"
     const val lifecycleLivedataKtx = "2.2.0"
     const val glide = "4.8.0"
 }

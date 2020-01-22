@@ -4,4 +4,14 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
 
+    <dimen name="card_height_start">250dp</dimen>
+    <dimen name="card_width_start">350dp</dimen>
+
+    <dimen name="card_height_end">150dp</dimen>
+    <dimen name="card_width_end">350dp</dimen>
+
+    <dimen name="image_height">120dp</dimen>
+    <dimen name="image_width">320dp</dimen>
+
+
 </resources>
