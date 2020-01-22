@@ -9,20 +9,12 @@
     tools:showIn="@layout/activity_main">
 
     <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/motion_wrapper"
         android:paddingBottom="@dimen/grid_large"
         app:layoutDescription="@xml/scene_body">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/first_item_image_hidden"
-            android:layout_width="@dimen/image_width_start"
-            android:layout_height="@dimen/image_height_start"
-            android:layout_marginEnd="@dimen/grid_large"
-            android:src="@drawable/ic_emilia"
-            app:layout_constraintEnd_toEndOf="@id/first_item"
-            app:layout_constraintTop_toTopOf="@id/first_item" />
 
         <Space
             android:id="@+id/first_item_image_negative_margin"
@@ -39,10 +31,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/first_item_image_hidden"
+            android:layout_width="@dimen/image_width_end"
+            android:layout_height="@dimen/image_height_end"
+            android:src="@drawable/ic_emilia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/first_item_background" />
+
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/first_item_background"
-            android:layout_width="@dimen/card_width_start"
-            android:layout_height="@dimen/card_height_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
             android:layout_marginEnd="@dimen/grid_large"
@@ -51,6 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/first_item"

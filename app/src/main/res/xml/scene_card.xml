@@ -5,16 +5,16 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="200"
-        motion:motionInterpolator="linear">
+        motion:duration="100"
+        motion:motionInterpolator="accelerate">
         <OnClick motion:targetId="@+id/item_text" />
     </Transition>
 
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="200"
-        motion:motionInterpolator="linear">
+        motion:duration="100"
+        motion:motionInterpolator="accelerate">
         <OnClick motion:targetId="@+id/item_image" />
     </Transition>
 
@@ -50,17 +50,17 @@
             android:id="@+id/item_negative_margin"
             android:layout_width="200dp"
             android:layout_height="400dp"
+            motion:layout_constraintBottom_toTopOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toTopOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@+id/item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" >
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
             <CustomAttribute
                 motion:attributeName="textSize"
                 motion:customDimension="8sp" />
