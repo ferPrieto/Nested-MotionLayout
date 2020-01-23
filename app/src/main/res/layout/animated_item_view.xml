@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/scene_card"
+    app:layoutDescription="@xml/scene_item"
     tool:showIn="@layout/content_scrolling">
 
     <Space
@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/grid_large"
         android:textColor="@color/text"
-        android:textSize="@dimen/text_size_normal"
+        android:fontFamily="@font/pt_sans"
+        android:textSize="@dimen/text_size_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
