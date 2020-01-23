@@ -3,19 +3,17 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        android:id="@+id/first_transition"
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="100"
         motion:motionInterpolator="accelerate">
-        <OnClick motion:targetId="@+id/item_text" />
-    </Transition>
-
-    <Transition
-        motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@+id/start"
-        motion:duration="100"
-        motion:motionInterpolator="accelerate">
-        <OnClick motion:targetId="@+id/item_image" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:visibility="gone"
+                motion:framePosition="5"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/item_image"  />
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

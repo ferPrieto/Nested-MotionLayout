@@ -16,6 +16,7 @@ class AnimatedItem @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : MotionLayout(context, attrs, defStyleAttr), View.OnClickListener {
     private var initialized = false
+    private var isFirstTransition = true
 
     private lateinit var animatedItemClick: AnimatedItemClick
 
@@ -30,19 +31,32 @@ class AnimatedItem @JvmOverloads constructor(
 
     override fun setOnClickListener(l: OnClickListener?) {
         super.setOnClickListener(l)
-        if (initialized) {
-            root?.let {
-                root.transitionToStart()
-                root.transitionToEnd()
-            }
-        }
+        performTransition()
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         initialized = true
-        item_image.setOnClickListener { animatedItemClick.onClickListener() }
-        item_text.setOnClickListener { animatedItemClick.onClickListener() }
+        root.setOnClickListener {
+            animatedItemClick.onClickListener()
+            performTransition()
+        }
+    }
+
+    private fun performTransition() {
+        if (initialized) {
+            root?.let {
+                if (isFirstTransition) {
+                    root.setTransitionDuration(200)
+                    isFirstTransition = false
+                } else {
+                    isFirstTransition = true
+                    root.setTransitionDuration(800)
+                }
+                root.transitionToStart()
+                root.transitionToEnd()
+            }
+        }
     }
 
     private fun initializeView(context: Context) {

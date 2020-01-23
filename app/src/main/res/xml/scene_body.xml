@@ -5,10 +5,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="500"
-        motion:motionInterpolator="accelerate">
-        <OnClick motion:targetId="@id/first_item" />
-    </Transition>
+        motion:motionInterpolator="accelerate" />
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
@@ -64,9 +61,9 @@
             android:layout_width="@dimen/image_width_start"
             android:layout_height="@dimen/image_height_start"
             android:layout_marginEnd="@dimen/grid_large"
+            android:src="@drawable/ic_emilia"
             motion:layout_constraintEnd_toEndOf="@id/first_item"
-            motion:layout_constraintTop_toTopOf="@id/first_item"
-            android:src="@drawable/ic_emilia"  />
+            motion:layout_constraintTop_toTopOf="@id/first_item" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
