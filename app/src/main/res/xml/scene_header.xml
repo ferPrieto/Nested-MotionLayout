@@ -3,13 +3,13 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        android:id="@+id/trasition1"
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
         motion:duration="1000"
         motion:motionInterpolator="linear" />
 
     <ConstraintSet android:id="@+id/start">
-
         <Constraint
             android:id="@id/background"
             android:layout_width="0dp"
@@ -18,7 +18,11 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintVertical_bias="0.38" />
+            motion:layout_constraintVertical_bias="0.38">
+            <CustomAttribute
+                motion:attributeName="Crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
 
         <Constraint
             android:id="@id/name"
@@ -118,6 +122,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone" />
-
     </ConstraintSet>
 </MotionScene>

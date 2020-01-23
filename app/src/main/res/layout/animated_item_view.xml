@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/scene_card"
+    tool:showIn="@layout/content_scrolling">
+
+    <Space
+        android:id="@+id/item_negative_margin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="@string/content_scrolling_emilia_title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/image_width_start"
+        android:layout_height="@dimen/image_height_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_text"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:src="@drawable/ic_emilia" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
+

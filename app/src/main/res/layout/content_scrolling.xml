@@ -8,46 +8,72 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="@dimen/grid_normal"
-        android:paddingBottom="@dimen/grid_large"
-
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/grid_large"
+        app:layoutDescription="@xml/scene_body">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/first_item"
-            android:layout_width="match_parent"
+
+        <Space
+            android:id="@+id/first_item_image_negative_margin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:id="@+id/first_item_negative_margin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/first_item_image_hidden"
+            android:layout_width="@dimen/image_width_end"
+            android:layout_height="@dimen/image_height_end"
+            android:src="@drawable/ic_emilia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/first_item_background" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/first_item_background"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/card_elevation"
             android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:src="@drawable/rectangle_rounded_background"
+            app:altSrc="@drawable/rectangle_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/first_item_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_emilia_title" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_emilia" />
-        </androidx.cardview.widget.CardView>
+        <prieto.fernando.fancymotionlayout.utils.AnimatedItem
+            android:id="@+id/first_item"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
+            android:elevation="@dimen/card_elevation"
+            app:image="@drawable/ic_emilia"
+            app:layout_constraintBottom_toBottomOf="@id/first_item_background"
+            app:layout_constraintEnd_toEndOf="@id/first_item_background"
+            app:layout_constraintStart_toStartOf="@id/first_item_background"
+            app:layout_constraintTop_toTopOf="@id/first_item_background"
+            app:title="@string/content_scrolling_emilia_title" />
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/second_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/card_elevation"
             android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:background="@drawable/rectangle_background"
+            android:elevation="@dimen/card_elevation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/first_item">
@@ -56,24 +82,30 @@
                 android:id="@+id/second_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_peter_title" />
+                android:text="@string/content_scrolling_peter_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_peter" />
+                android:src="@drawable/ic_peter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/third_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/card_elevation"
             android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:background="@drawable/rectangle_background"
+            android:elevation="@dimen/card_elevation"
+            android:padding="@dimen/grid_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/second_item">
@@ -82,23 +114,31 @@
                 android:id="@+id/third_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_maisie_title" />
+                android:text="@string/content_scrolling_maisie_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:src="@drawable/ic_maisie" />
-        </androidx.cardview.widget.CardView>
+                android:src="@drawable/ic_maisie"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fourth_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/card_elevation"
             android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
             android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:background="@drawable/rectangle_background"
+            android:elevation="@dimen/card_elevation"
+            android:padding="@dimen/grid_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/third_item">
@@ -107,16 +147,19 @@
                 android:id="@+id/fourth_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_kit_title" />
+                android:text="@string/content_scrolling_kit_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_kit" />
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+                android:src="@drawable/ic_kit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
 </androidx.core.widget.NestedScrollView>

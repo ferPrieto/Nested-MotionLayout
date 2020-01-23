@@ -42,4 +42,7 @@ dependencies {
 
     implementation(Dependencies.material)
     implementation(Dependencies.glide)
+
+    implementation(Dependencies.rxAndroid)
+    implementation(Dependencies.rxJava)
 }

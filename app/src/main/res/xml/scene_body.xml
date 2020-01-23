@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:motionInterpolator="accelerate" />
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/first_item_background"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
+            android:layout_marginStart="@dimen/grid_large"
+            android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/first_item"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
+            android:elevation="@dimen/card_elevation"
+            motion:layout_constraintBottom_toBottomOf="@id/first_item_background"
+            motion:layout_constraintEnd_toEndOf="@id/first_item_background"
+            motion:layout_constraintStart_toStartOf="@id/first_item_background"
+            motion:layout_constraintTop_toTopOf="@id/first_item_background">
+            <CustomAttribute
+                motion:attributeName="Crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/first_item_negative_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/first_item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/first_item_image_negative_margin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintEnd_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/first_item_image_hidden"
+            android:layout_width="@dimen/image_width_start"
+            android:layout_height="@dimen/image_height_start"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:src="@drawable/ic_emilia"
+            motion:layout_constraintEnd_toEndOf="@id/first_item"
+            motion:layout_constraintTop_toTopOf="@id/first_item" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/first_item_background"
+            android:layout_width="@dimen/card_width_end"
+            android:layout_height="@dimen/card_height_end"
+            android:layout_marginStart="@dimen/grid_large"
+            android:layout_marginTop="@dimen/grid_large"
+            android:layout_marginEnd="@dimen/grid_large"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/first_item"
+            android:layout_width="@dimen/card_width_end"
+            android:layout_height="@dimen/card_height_end"
+            android:elevation="@dimen/card_elevation"
+            motion:layout_constraintBottom_toBottomOf="@id/first_item_background"
+            motion:layout_constraintEnd_toEndOf="@id/first_item_background"
+            motion:layout_constraintStart_toStartOf="@id/first_item_background"
+            motion:layout_constraintTop_toTopOf="@id/first_item_background">
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/first_item_negative_margin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/first_item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/first_item_image_negative_margin"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintEnd_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/first_item_image_hidden"
+            android:layout_width="@dimen/image_width_end"
+            android:layout_height="@dimen/image_height_end"
+            android:layout_marginEnd="@dimen/grid_large"
+            android:src="@drawable/ic_emilia"
+            motion:layout_constraintStart_toStartOf="@+id/first_item_image_negative_margin"
+            motion:layout_constraintTop_toTopOf="@+id/first_item_image_negative_margin" />
+    </ConstraintSet>
+</MotionScene>
