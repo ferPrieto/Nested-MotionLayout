@@ -1,12 +1,14 @@
 package prieto.fernando.fancymotionlayout
 
 import android.os.Bundle
+import android.view.animation.AccelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import kotlinx.android.synthetic.main.content_scrolling.*
 import kotlinx.android.synthetic.main.coordinatorlayout_header.*
 import prieto.fernando.fancymotionlayout.utils.AnimatedItemClick
 import kotlinx.android.synthetic.main.content_scrolling.motion_wrapper as motionWrapper
+
 
 class MainActivity : AppCompatActivity(), AnimatedItemClick {
     private var isFirstTransition = false
@@ -28,10 +30,14 @@ class MainActivity : AppCompatActivity(), AnimatedItemClick {
                 p2: Boolean,
                 p3: Float
             ) {
+
             }
 
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
-                if (!isFirstTransition) {
+                if (isFirstTransition) {
+                    background.animate().alpha(0f).setDuration(500)
+                        .setInterpolator(AccelerateInterpolator()).start()
+                } else {
                     background.setImageDrawable(getDrawable(R.drawable.ic_header_background))
                 }
             }
@@ -40,6 +46,8 @@ class MainActivity : AppCompatActivity(), AnimatedItemClick {
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                 if (isFirstTransition) {
+                    background.animate().alpha(1f).setDuration(200)
+                        .setInterpolator(AccelerateInterpolator()).start()
                     background.setImageDrawable(getDrawable(R.drawable.ic_emilia))
                 }
             }
