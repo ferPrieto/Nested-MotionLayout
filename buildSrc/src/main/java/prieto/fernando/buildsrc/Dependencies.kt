@@ -17,31 +17,32 @@ object Versions {
     const val lifecycleLivedataKtx = "2.2.0"
     const val glide = "4.8.0"
     const val rxAndroid = "2.1.1"
-    const val rxJava = "3.0.0-RC8"
+    const val rxKotlin = "2.4.0"
 }
 
 object BuildDependencies {
     const val androidGradle =
-            "com.android.tools.build:gradle:${Versions.gradle}"
+        "com.android.tools.build:gradle:${Versions.gradle}"
     const val kotlinGradlePlugin =
-            "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 }
 
 object Dependencies {
 
     object AndroidX {
         const val fragmentKtx =
-                "androidx.fragment:fragment-ktx:${Versions.appCompat}"
+            "androidx.fragment:fragment-ktx:${Versions.appCompat}"
         const val coreKtx =
-                "androidx.core:core-ktx:${Versions.appCompat}"
+            "androidx.core:core-ktx:${Versions.appCompat}"
         const val constraintlayout =
             "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     }
+
     const val rxAndroid =
         "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
     const val rxJava =
-        "io.reactivex.rxjava3:rxjava:${Versions.rxJava}"
+        "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlin}"
 
-    const val material= "com.google.android.material:material:${Versions.material}"
+    const val material = "com.google.android.material:material:${Versions.material}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 }

@@ -9,11 +9,11 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.motion.widget.MotionLayout
-import kotlinx.android.synthetic.main.animated_item_view.view.item_image as itemImage
-import kotlinx.android.synthetic.main.animated_item_view.view.item_text as itemText
-import kotlinx.android.synthetic.main.animated_item_view.view.root
+import kotlinx.android.synthetic.main.animated_item_view.view.*
 import prieto.fernando.fancymotionlayout.R
 import prieto.fernando.fancymotionlayout.widget.SingleClickListener
+import kotlinx.android.synthetic.main.animated_item_view.view.item_image as itemImage
+import kotlinx.android.synthetic.main.animated_item_view.view.item_text as itemText
 
 class AnimatedItem @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -23,20 +23,20 @@ class AnimatedItem @JvmOverloads constructor(
 
     private lateinit var animatedItemClick: AnimatedItemClick
 
-    private val clickListener = object : SingleClickListener(){
+    private val clickListener = object : SingleClickListener() {
         override fun onClicked(v: View) {
             animatedItemClick.onClickListener(isFirstTransition)
-            performTransition()        }
+            performTransition()
+        }
     }
 
     init {
         initializeView(context)
         attrs?.let(::applyAttributes)
-
     }
 
-    fun setAnimatedItemClick(animatedItemClick: AnimatedItemClick) {
-        this.animatedItemClick = animatedItemClick
+    override fun onClick(v: View?) {
+        animatedItemClick.onClickListener(isFirstTransition)
     }
 
     override fun setOnClickListener(l: OnClickListener?) {
@@ -50,6 +50,10 @@ class AnimatedItem @JvmOverloads constructor(
         root.setOnClickListener(clickListener)
         itemText.setOnClickListener(clickListener)
         itemImage.setOnClickListener(clickListener)
+    }
+
+    fun setAnimatedItemClick(animatedItemClick: AnimatedItemClick) {
+        this.animatedItemClick = animatedItemClick
     }
 
     private fun performTransition() {
@@ -85,10 +89,6 @@ class AnimatedItem @JvmOverloads constructor(
 
     private fun TypedArray.setImageIfSet(imageView: AppCompatImageView, imageViewTextRes: Int) =
         getDrawable(imageViewTextRes)?.let(imageView::setImageDrawable)
-
-    override fun onClick(v: View?) {
-        animatedItemClick.onClickListener(isFirstTransition)
-    }
 }
 
 interface AnimatedItemClick {
