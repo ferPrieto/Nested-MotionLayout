@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), AnimatedItemClick {
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                 if (isFirstTransition) {
-                    background.setImageDrawable(getDrawable(R.drawable.ic_daenerys))
+                    background.setImageDrawable(getDrawable(R.drawable.ic_emilia))
                 }
             }
         })
