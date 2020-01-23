@@ -26,6 +26,7 @@
             android:id="@+id/first_item"
             android:layout_width="@dimen/card_width_start"
             android:layout_height="@dimen/card_height_start"
+            android:background="@color/colorPrimaryDark"
             android:elevation="@dimen/card_elevation"
             motion:layout_constraintBottom_toBottomOf="@id/first_item_background"
             motion:layout_constraintEnd_toEndOf="@id/first_item_background"
@@ -89,9 +90,7 @@
             motion:layout_constraintBottom_toBottomOf="@id/first_item_background"
             motion:layout_constraintEnd_toEndOf="@id/first_item_background"
             motion:layout_constraintStart_toStartOf="@id/first_item_background"
-            motion:layout_constraintTop_toTopOf="@id/first_item_background">
-
-        </Constraint>
+            motion:layout_constraintTop_toTopOf="@id/first_item_background"/>
         <Constraint
             android:id="@+id/first_item_negative_margin"
             android:layout_width="100dp"
