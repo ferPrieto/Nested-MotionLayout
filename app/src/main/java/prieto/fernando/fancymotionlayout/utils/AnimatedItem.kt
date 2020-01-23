@@ -9,8 +9,11 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.motion.widget.MotionLayout
-import kotlinx.android.synthetic.main.animated_item_view.view.*
+import kotlinx.android.synthetic.main.animated_item_view.view.item_image as itemImage
+import kotlinx.android.synthetic.main.animated_item_view.view.item_text as itemText
+import kotlinx.android.synthetic.main.animated_item_view.view.root
 import prieto.fernando.fancymotionlayout.R
+import prieto.fernando.fancymotionlayout.widget.SingleClickListener
 
 class AnimatedItem @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -20,9 +23,16 @@ class AnimatedItem @JvmOverloads constructor(
 
     private lateinit var animatedItemClick: AnimatedItemClick
 
+    private val clickListener = object : SingleClickListener(){
+        override fun onClicked(v: View) {
+            animatedItemClick.onClickListener(isFirstTransition)
+            performTransition()        }
+    }
+
     init {
         initializeView(context)
         attrs?.let(::applyAttributes)
+
     }
 
     fun setAnimatedItemClick(animatedItemClick: AnimatedItemClick) {
@@ -37,10 +47,9 @@ class AnimatedItem @JvmOverloads constructor(
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         initialized = true
-        root.setOnClickListener {
-            animatedItemClick.onClickListener(isFirstTransition)
-            performTransition()
-        }
+        root.setOnClickListener(clickListener)
+        itemText.setOnClickListener(clickListener)
+        itemImage.setOnClickListener(clickListener)
     }
 
     private fun performTransition() {
@@ -66,8 +75,8 @@ class AnimatedItem @JvmOverloads constructor(
     @SuppressLint("CustomViewStyleable")
     private fun applyAttributes(attributes: AttributeSet) {
         val typedArray = context.obtainStyledAttributes(attributes, R.styleable.ConvertibleCardView)
-        typedArray.setTextIfSet(item_text, R.styleable.ConvertibleCardView_title)
-        typedArray.setImageIfSet(item_image, R.styleable.ConvertibleCardView_image)
+        typedArray.setTextIfSet(itemText, R.styleable.ConvertibleCardView_title)
+        typedArray.setImageIfSet(itemImage, R.styleable.ConvertibleCardView_image)
         typedArray.recycle()
     }
 

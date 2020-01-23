@@ -16,6 +16,8 @@ object Versions {
     const val material = "1.1.0-beta01"
     const val lifecycleLivedataKtx = "2.2.0"
     const val glide = "4.8.0"
+    const val rxAndroid = "2.1.1"
+    const val rxJava = "3.0.0-RC8"
 }
 
 object BuildDependencies {
@@ -33,11 +35,12 @@ object Dependencies {
         const val coreKtx =
                 "androidx.core:core-ktx:${Versions.appCompat}"
         const val constraintlayout =
-                "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-        const val archComponents =
-                "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleLivedataKtx}"
-
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     }
+    const val rxAndroid =
+        "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
+    const val rxJava =
+        "io.reactivex.rxjava3:rxjava:${Versions.rxJava}"
 
     const val material= "com.google.android.material:material:${Versions.material}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
