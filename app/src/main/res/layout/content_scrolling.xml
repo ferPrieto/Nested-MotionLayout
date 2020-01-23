@@ -52,7 +52,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/first_item"
             android:layout_width="@dimen/card_width_start"
@@ -65,101 +64,44 @@
             app:layout_constraintTop_toTopOf="@id/first_item_background"
             app:title="@string/content_scrolling_emilia_title" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/second_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginTop="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
             android:background="@drawable/rectangle_background"
             android:elevation="@dimen/card_elevation"
+            android:layout_marginTop="@dimen/grid_large"
+            app:image="@drawable/ic_peter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first_item">
+            app:layout_constraintTop_toBottomOf="@id/first_item"
+            app:title="@string/content_scrolling_peter_title" />
 
-            <TextView
-                android:id="@+id/second_item_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_peter_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_peter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/third_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginTop="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
             android:background="@drawable/rectangle_background"
             android:elevation="@dimen/card_elevation"
-            android:padding="@dimen/grid_small"
+            android:layout_marginTop="@dimen/grid_large"
+            app:image="@drawable/ic_maisie"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/second_item">
+            app:layout_constraintTop_toBottomOf="@id/second_item"
+            app:title="@string/content_scrolling_maisie_title" />
 
-            <TextView
-                android:id="@+id/third_item_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_maisie_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_maisie"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <prieto.fernando.fancymotionlayout.utils.AnimatedItem
             android:id="@+id/fourth_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/grid_large"
-            android:layout_marginTop="@dimen/grid_large"
-            android:layout_marginEnd="@dimen/grid_large"
+            android:layout_width="@dimen/card_width_start"
+            android:layout_height="@dimen/card_height_start"
             android:background="@drawable/rectangle_background"
             android:elevation="@dimen/card_elevation"
-            android:padding="@dimen/grid_small"
+            android:layout_marginTop="@dimen/grid_large"
+            app:image="@drawable/ic_kit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/third_item">
-
-            <TextView
-                android:id="@+id/fourth_item_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/content_scrolling_kit_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_kit"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@id/third_item"
+            app:title="@string/content_scrolling_kit_title" />
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
 </androidx.core.widget.NestedScrollView>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <color name="contentBackground">#FFF</color>
-        <color name="colorPrimary">#8eb1c4</color>
-        <color name="colorPrimaryDark">#122345</color>
-        <color name="colorAccent">#D81B60</color>
-        <color name="tintImage">#41000000</color>
+        <color name="colorPrimary">#1d1d1d</color>
+        <color name="colorPrimaryDark">#121212</color>
+        <color name="colorAccent">#f7c793</color>
+
         <color name="text">#ffffff</color>
+        <color name="contentBackground">#FFF</color>
+        <color name="tintImage">#41000000</color>
         <color name="azure">#49A9DF</color>
         <color name="cerulean_blue">#137AE2</color>
         <color name="brown">#643A07</color>

@@ -26,17 +26,12 @@
 
         <Constraint
             android:id="@id/name"
-            android:layout_width="162dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Nicolas Roard"
             android:textColor="@color/text"
-            motion:autoSizeTextType="uniform"
             motion:layout_constraintBottom_toTopOf="@+id/textView"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintHorizontal_bias="0.5"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/icon">
             <CustomAttribute
@@ -102,7 +97,7 @@
             motion:layout_constraintStart_toStartOf="parent">
             <CustomAttribute
                 motion:attributeName="textColor"
-                motion:customColorValue="@color/grey" />
+                motion:customColorValue="@color/colorAccent" />
         </Constraint>
         <Constraint
             android:id="@id/icon"

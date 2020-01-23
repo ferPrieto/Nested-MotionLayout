@@ -21,12 +21,14 @@ class AnimatedItem @JvmOverloads constructor(
     private var initialized = false
     private var isFirstTransition = true
 
-    private lateinit var animatedItemClick: AnimatedItemClick
+    private var animatedItemClick: AnimatedItemClick? = null
 
     private val clickListener = object : SingleClickListener() {
         override fun onClicked(v: View) {
-            animatedItemClick.onClickListener(isFirstTransition)
-            performTransition()
+            animatedItemClick?.let { click ->
+                click.onClickListener(isFirstTransition)
+                performTransition()
+            }
         }
     }
 
@@ -36,7 +38,9 @@ class AnimatedItem @JvmOverloads constructor(
     }
 
     override fun onClick(v: View?) {
-        animatedItemClick.onClickListener(isFirstTransition)
+        animatedItemClick?.let { click ->
+            click.onClickListener(isFirstTransition)
+        }
     }
 
     override fun setOnClickListener(l: OnClickListener?) {

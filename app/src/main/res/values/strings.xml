@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FancyMotionLayout</string>
 
-    <string name="header_title">Game Of Thrones</string>
+    <string name="header_title">Game of Thrones</string>
     <string name="content_scrolling_emilia_title">Emilia Clarke</string>
     <string name="content_scrolling_peter_title">Peter Dinklage</string>
     <string name="content_scrolling_kit_title">Kit Harington</string>
