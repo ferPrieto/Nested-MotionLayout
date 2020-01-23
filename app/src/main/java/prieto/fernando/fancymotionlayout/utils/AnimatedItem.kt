@@ -38,7 +38,7 @@ class AnimatedItem @JvmOverloads constructor(
         super.onAttachedToWindow()
         initialized = true
         root.setOnClickListener {
-            animatedItemClick.onClickListener()
+            animatedItemClick.onClickListener(isFirstTransition)
             performTransition()
         }
     }
@@ -78,10 +78,10 @@ class AnimatedItem @JvmOverloads constructor(
         getDrawable(imageViewTextRes)?.let(imageView::setImageDrawable)
 
     override fun onClick(v: View?) {
-        animatedItemClick.onClickListener()
+        animatedItemClick.onClickListener(isFirstTransition)
     }
 }
 
 interface AnimatedItemClick {
-    fun onClickListener()
+    fun onClickListener(isFirstTransition: Boolean)
 }
