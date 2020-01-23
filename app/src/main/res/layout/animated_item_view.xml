@@ -17,20 +17,22 @@
 
     <TextView
         android:id="@+id/item_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_large"
-        android:textColor="@color/text"
+        android:layout_marginEnd="@dimen/grid_large"
         android:fontFamily="@font/pt_sans"
+        android:gravity="center_vertical"
+        android:textColor="@color/text"
         android:textSize="@dimen/text_size_item"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/item_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tool:text="@string/content_scrolling_emilia_title" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/item_image"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
