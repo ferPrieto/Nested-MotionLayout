@@ -1,7 +1,9 @@
 
 # Nested MotionLayout  
   
-![demo](art/Demo-Nested-MotionLayout.gif)  
+<p align="center">
+    <img src="art/Demo-Nested-MotionLayout.gif"/>
+</p>
   
 The purpose of this project is to show up the complexity, pros and cons of going against what Google mentions in the [MotionLayout documentation][motionLayout]:  
 >Note: MotionLayout works only with its direct children. It does not support nested layout hierarchies or activity transitions.  
@@ -29,7 +31,22 @@ Following one of the Mike Scamell's examples [Loco-MotionLayout][locoMotionLayou
 Using scenes within the xml files, forces you to have all of your animations views in the same `layout` (it was acknowledged with the Android documentation). Then, in case you want to communicate one of those includes with the other one, you might need to use the listeners provided in your UI. For example:  
 ```  
 motionWrapper.setTransitionListener(object : MotionLayout.TransitionListener {  
- override fun onTransitionTrigger( p0: MotionLayout?, p1: Int,  p2: Boolean, p3: Float ) {} override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) { if (isFirstTransition) { background.animate().alpha(0f).setDuration(500) .setInterpolator(AccelerateInterpolator()).start() } else { background.setImageDrawable(getDrawable(R.drawable.ic_header_background)) } } override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {} override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) { if (isFirstTransition) { background.animate().alpha(1f).setDuration(200) .setInterpolator(AccelerateInterpolator()).start() background.setImageDrawable(getDrawable(R.drawable.ic_emilia)) } } })
+ override fun onTransitionTrigger( p0: MotionLayout?, p1: Int,  p2: Boolean, p3: Float ) {} 
+ override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) { 
+    if (isFirstTransition) { 
+        background.animate().alpha(0f).setDuration(500).setInterpolator(AccelerateInterpolator()).start() 
+    } else { 
+        background.setImageDrawable(getDrawable(R.drawable.ic_header_background)) 
+    } 
+ } 
+ override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {} 
+ override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) { 
+    if (isFirstTransition) { 
+        background.animate().alpha(1f).setDuration(200).setInterpolator(AccelerateInterpolator()).start() 
+        background.setImageDrawable(getDrawable(R.drawable.ic_emilia)) 
+    } 
+ } 
+})
 ```
 And also things like calling the animation trigger from the desired point of the code:  
 
